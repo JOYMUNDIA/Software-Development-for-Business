@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #707202;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.step {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.step h2 {
+    font-size: 1.8em;
+    color: #707202;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.step ol {
+    margin-left: 20px;
+}
+
+.step ul {
+    margin-left: 20px;
+}
+
+.step ol li,
+.step ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+footer {
+    background-color: #707202;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Example Guide Section Styles */
+.example-guide {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.example-guide h3 {
+    color: #707202;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.example-guide p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.example-guide ul {
+    margin-left: 20px;
+}
+
+.example-guide ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.example-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .step h2 {
+        font-size: 1.5em;
+    }
+
+    .step p,
+    .step ol li,
+    .step ul li {
+        font-size: 1em;
+    }
+
+    .example-guide h3 {
+        font-size: 1.3em;
+    }
+
+    .example-guide p,
+    .example-guide ul li {
+        font-size: 1em;
+    }
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 1rem;
+}
+
+.pagination-btn {
+    background-color: #707202;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Initially hide all steps except the first one */
+.step {
+    display: none;
+}
+
+/* Show the active step */
+.step:first-child {
+    display: block;
+}
+
+
