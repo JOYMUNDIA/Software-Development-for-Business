@@ -9,6 +9,36 @@
 </head>
 <body>
 
+    <!-- CHALKBOARD HAMBURGER WITH DRAWING -->
+<div class="menu-wrapper" id="menuButton">
+  <div class="board-frame">
+    <div class="board">
+      <div class="hamburger">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <!-- Actual chalk X -->
+        <div class="x-line x-line1"></div>
+        <div class="x-line x-line2"></div>
+      </div>
+    </div>
+    <div class="tray">
+      <div class="chalk" id="chalk"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+  <a href="https://joymundia.github.io/Main-Javascript-link/">Home</a>
+  <a href="https://joymundia.github.io/Javascript-Curriculum/">📘 Curriculum</a>
+  <a href="https://joymundia.github.io/Software-Development-for-Business/" class="active">📖 Software Development Guide</a>
+  <a href="https://joymundia.github.io/Main-Javascript-link/#assignments">📝 Assignments</a>
+  <a href="https://joymundia.github.io/Main-Javascript-link/#notes">📚 Notes</a>
+  <a href="https://joymundia.github.io/Main-Javascript-link/#projects">🚀 Guided Projects</a>
+  <a href="https://joymundia.github.io/Main-Javascript-link/#guide">📖 Expectations</a>
+</div>
+
     <header>
         <div class="container">
             <h1>Software Product Development: A Step-by-Step Guide</h1>
@@ -373,11 +403,54 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Software Product Development Guide. All rights reserved.</p>
+            <p>
+                &copy; 2026 Software Product Development Guide. All rights reserved.<br>
+                By <a href="https://www.linkedin.com/in/joy-mundia/">Joy Mundia</a>
+            </p>
         </div>
     </footer>
 
     <script>
+
+        // ============ Hamburger Menu and Sidebar ========== //
+        const menuButton = document.getElementById("menuButton");
+        const sideMenu = document.getElementById("sideMenu");
+
+        // ===== MENU DRAW ANIMATION =====
+        const lines = document.querySelectorAll(".line");
+        const chalk = document.getElementById("chalk");
+
+        function drawLine(line, chalkMove, delay){
+        setTimeout(() => {
+
+            line.style.animation = `drawLine 0.6s forwards`;
+            chalk.style.animation = `${chalkMove} 0.6s forwards`;
+
+        }, delay);
+        }
+
+        // Sequence each line
+        drawLine(lines[0], "chalkMove1", 0);
+        drawLine(lines[1], "chalkMove2", 700);
+        drawLine(lines[2], "chalkMove3", 1400);
+
+        setTimeout(() => {
+        chalk.style.animation = "chalkReturn 0.5s forwards";
+        }, 2100);
+
+        // ===== ONLY TOGGLE SIDEBAR ON HAMBURGER CLICK =====
+        menuButton.addEventListener("click", () => {
+        // Toggle sidebar
+        sideMenu.classList.toggle("active");
+
+        // Toggle hamburger X
+        const hamburger = menuButton.querySelector(".hamburger");
+        hamburger.classList.toggle("active");
+
+        // move chalkboard outward
+        menuButton.classList.toggle("shifted");
+        });
+
         // JavaScript for pagination functionality
         let currentStep = 0;
         const steps = document.querySelectorAll('.step');
